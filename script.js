@@ -1,6 +1,6 @@
 // Countdown Timer
 function startCountdown() {
-    const countdownDate = new Date("2025-01-06T00:00:00").getTime();
+    const countdownDate = new Date("2025-01-01T00:00:00").getTime();
     const countdownElement = document.getElementById("countdown");
 
     const interval = setInterval(() => {
