@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="./public/images/birthday_icon.jpeg" />
+    <title>Happy Birthday, Love!</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body >
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="#">Happy Birthday!</a>
+        <button id="music-toggle" class="btn btn-music" onclick="toggleMusic()">Turn Music On</button>
+    </nav>
+
+    <!-- Landing Section -->
+    <section class="landing">
+        <div class="container text-center">
+            <h1 class="display-4">Happy Birthday, Labani!</h1>
+            <p class="lead">Today, we celebrate you!</p>
+            <button class="btn btn-primary" onclick="showWishModal()">Read My Wish</button>
+        </div>
+    </section>
+
+    <!-- Background Music -->
+    <audio id="bg-music" loop>
+        <source src="./public/music/birthday_music.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Countdown Timer -->
+    <section class="countdown-section text-center">
+        <div class="container">
+            <h2>Time Left Until Your Birthday Surprise!</h2>
+            <div id="countdown" class="countdown"></div>
+        </div>
+    </section>
+
+    <!-- Photo Gallery -->
+    <section class="gallery-section">
+        <div class="container text-center">
+            <h3 class="pb-3">💮 Our Precious Moments 💮</h3>
+            <div class="row">
+                <div class="col-md-4 pb-2">
+                    <img src="./public/images/img1.jpg" alt="Photo 1" class="img-fluid">
+                </div>
+                <div class="col-md-4 pb-2">
+                    <img src="./public/images/img2.jpeg" alt="Photo 2" class="img-fluid">
+                </div>
+                <div class="col-md-4">
+                    <img src="./public/images/img3.jpeg" alt="Photo 3" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- "Do You Want to Be a Part of My Life?" Section -->
+    <section class="question-section text-center">
+        <div class="container">
+            <h2>Would you like to be a part of my life forever?</h2>
+            <button id="yes-button" class="btn btn-yes" onclick="showThankYou()">Yes, I do</button>
+            <button id="no-button" class="btn btn-no" onclick="showSadMessage()">No, I don’t</button>
+            <p id="message" class="message"> </p>
+        </div>
+    </section>
+
+    <!-- Birthday Wish Modal -->
+    <div class="modal fade" id="wishModal" tabindex="-1" aria-labelledby="wishModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="wishModalLabel">🎉 A Special Wish for You</h5> 
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">❌</span> 
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>💖 Dear Love, I wish you the happiest birthday filled with love, laughter, and everything beautiful. You mean the world to me, and I’m grateful for every moment we share. Here’s to many more birthdays together! 💖</p> <!-- Added emojis in text -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Message Section -->
+    <section class="message-section text-center pt-4 pb-0 ">
+        <div class="container d-flex flex-column align-items-center justify-content-center">
+            <!-- Prompt Container -->
+            <div class="prompt-container">
+                <h2>Would you like to send a message to Sayan?</h2>
+                <button id="show-form-button" class="btn">Yes</button>
+            </div>
+
+            <!-- Message Form Container -->
+            <div id="message-form-container" class="message-form-container">
+                <form id="message-form">
+                    <textarea name="message" id="message-content" rows="7" placeholder="Write your sweet message here..." required></textarea>
+                    <button type="submit" class="btn btn-send">Send</button>
+                </form>
+                <p id="form-status-message" class="message-status"></p> <!-- Success/Error Message -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer-section">
+        <div class="container text-center">
+            <p class="footer-message">You are the reason for my smile and happiness. Thank you for being my everything. 🌹</p>
+            <p>&copy; 2025 All Rights Reserved | Made with 💕 just for you</p>
+        </div>
+    </footer>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Load EmailJS library and initialize it -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        emailjs.init("JEtMWdVvLpJxvxn7-"); //EmailJS user ID
+    </script>
+
+    <!-- Load your custom script.js after EmailJS is initialized -->
+    <script src="./script.js"></script>
+</body>
+</html>
